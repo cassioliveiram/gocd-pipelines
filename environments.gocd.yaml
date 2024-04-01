@@ -1,0 +1,4 @@
+environments:
+  MGMNT:
+    pipelines:
+      - terraform-kind-modules-tag
