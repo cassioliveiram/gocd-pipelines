@@ -3,13 +3,15 @@ pipelines:
     group: DevOps
     label_template: ${COUNT}
     materials:
-      git-repo-terraform-modules:
+      git-repo:
         url: git@github.com:cassioliveiram/terraform-kind-module.git
-        defaultBranch: main
-        auto_update: true
+        defaultBranch: master
+        auto_update: false
     stages:
       - list-and-publish-tags:
-          fetch_materials: yes
+          fetch_materials: no
+          approval:
+            type: manual
           jobs:
             list-and-publish-tags:
               environment_variables:
