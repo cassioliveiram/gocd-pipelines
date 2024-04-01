@@ -1,6 +1,6 @@
 pipelines:
   ops-manual-test:
-    group: Kafka-Manual-Producer
+    group: MGMNT
     label_template: "${COUNT}"
     locking: off
     environment_variables:

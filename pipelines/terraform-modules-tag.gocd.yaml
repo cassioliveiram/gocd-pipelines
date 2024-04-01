@@ -1,6 +1,6 @@
 pipelines:
   terraformTag:
-    group: DevOps
+    group: MGMNT
     label_template: ${COUNT}
     materials:
       git-repo:

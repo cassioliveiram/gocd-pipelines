@@ -1,0 +1,13 @@
+pipelines:
+  mypipeline:
+    group: MGMNT
+    materials:
+      mygit:
+        git: http://my.example.org/mygit.git
+    stages:
+      - mystage:
+          jobs:
+            myjob:
+              tasks:
+                - exec:
+                    command: make
