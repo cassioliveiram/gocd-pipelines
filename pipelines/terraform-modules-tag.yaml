@@ -1,5 +1,5 @@
 pipelines:
-  terraform-kind-modules-tag:
+  terraformTag:
     group: DevOps
     label_template: ${COUNT}
     materials:
