@@ -2,3 +2,4 @@ environments:
   MGMNT:
     pipelines:
       - terraformTag
+      - ops-manual-test
