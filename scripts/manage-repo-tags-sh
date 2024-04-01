@@ -1,0 +1,10 @@
+#!/bin/bash
+
+GOCD_HOME=$(pwd)
+
+#Load development variables and functions
+source $GOCD_HOME/scripts/common/git_functions.sh
+
+git_list_tags
+git_patch_type $1
+git_publish_tag

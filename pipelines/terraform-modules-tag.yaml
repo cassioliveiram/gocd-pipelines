@@ -1,0 +1,21 @@
+pipelines:
+  terraform-kind-modules-tag:
+    group: DevOps
+    label_template: ${COUNT}
+    materials:
+      git-repo-terraform-modules:
+        url: git@github.com:cassioliveiram/terraform-kind-module.git
+        defaultBranch: main
+        auto_update: true
+    stages:
+      - list-and-publish-tags:
+          fetch_materials: yes
+          jobs:
+            list-and-publish-tags:
+              environment_variables:
+                VERSION_TYPE: "patch"
+              tasks:
+                - script: |
+                    set -e ## exit on first error
+                    cd pipeline
+                    bash scripts/manage-repo-tags-sh "$VERSION_TYPE"
